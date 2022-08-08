@@ -3,15 +3,15 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('reportar')
-		.setDescription('Comando para reportar um problema ou uma sugestão')
+		.setName('report')
+		.setDescription('Report')
 		.addStringOption(option => 
 			option
 			.setName('report')
-			.setDescription('Problema ou sugestão que deseja reportar')
+			.setDescription('Report')
 			.setRequired(true)
 		),
-	async execute(interaction, client) {
+	async execute(interaction, client, lf) {
 		let embed_novo_report = new EmbedBuilder()
 		.setColor('Aqua')
 		.setAuthor({ name: 'Novo report!' })
@@ -20,6 +20,6 @@ module.exports = {
 
 		client.channels.cache.get(process.env.CANAL_REPORTS)
 		.send({ embeds: [embed_novo_report] })
-		.then(() => { interaction.reply({ content: `Enviado! Obrigado **${interaction.user.username}**!`, ephemeral: true }) })
+		.then(() => { interaction.reply({ content: lf['report_1'].replace('{user}', interaction.user.username), ephemeral: true }) })
 	},
 };

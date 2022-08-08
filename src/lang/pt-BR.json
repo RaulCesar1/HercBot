@@ -1,0 +1,33 @@
+{
+    "help_desc": "Mostra a descrição de um comando em específico",
+    "report_desc": "Comando para reportar um problema ou uma sugestão",
+    "uptime_desc": "Mostra o tempo de atividade do bot",
+    "ping_desc": "Mostra o ping do bot",
+    "csgo_desc": "Comandos relacionados ao CS:GO",
+    "about_desc": "Mostra informações sobre o bot",
+    "changelog_desc": "Mostra as notas de atualização do bot",
+
+    "ping_1": "**Ping do bot: `{bot_ping}ms`**",
+
+    "report_1": "Enviado! Obrigado **{user}**!",
+
+    "help_1": "**Para ver a descrição de um comando específico, use o comando:**\n`/help <nome-do-comando>`",
+    "help_2": "Lista de comandos disponíveis:",
+    "help_3": "O comando `{command}` não existe!",
+
+    "csgo_1": "Item não encontrado!",
+    "csgo_2": "Oferta:",
+    "csgo_3": "Preço Médio:",
+    "csgo_4": "Resultados para \"{item}\"",
+
+    "about_1": "**Herc** é um bot criado para auxiliar o usuário a manter o controle de seus servidores.",
+    "about_2": "Criado por **Raul César**, o bot foi desenvolvido em linguagem **JavaScript** e utiliza o framework **Discord.js**.",
+    "about_3": "Versão",
+
+    "avatar_1": "O usuário {tag} não possui uma foto de perfil!",
+
+    "changelog_1": "ID não encontrado!",
+    "changelog_2": "Notas de Atualização",
+    "changelog_3": "Versão",
+    "changelog_4": "Página {nota.id} | Caso queira olhar outras notas de atualizações, use: /changelog <1-{aid}>"
+}

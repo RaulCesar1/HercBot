@@ -4,7 +4,7 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('uptime')
-		.setDescription('Mostra o tempo que o bot está ligado'),
+		.setDescription('Uptime'),
 	async execute(interaction, client) {
         function converter_horas(tempo) {
 			var horas = Math.floor(tempo / 3600);

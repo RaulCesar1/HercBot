@@ -1,0 +1,33 @@
+{
+    "help_desc": "Shows the description of a specific command",
+    "report_desc": "Command to report a problem or a suggestion",
+    "uptime_desc": "Shows bot uptime",
+    "ping_desc": "Shows bot ping",
+    "csgo_desc": "CS:GO related commands",
+    "about_desc": "Show information about the bot",
+    "changelog_desc": "Shows the bot's patch notes",
+
+    "ping_1": "**Bot Ping: `{bot_ping}ms`**",
+
+    "report_1": "Sent! Thank you **{user}**!",
+
+    "help_1": "**To see the description of a specific command, use the command:**\n`/help <command-name>`",
+    "help_2": "List of available commands:",
+    "help_3": "The command `{command}` does not exist!",
+
+    "csgo_1": "Item not found!",
+    "csgo_2": "Offer:",
+    "csgo_3": "Average price:",
+    "csgo_4": "Results for \"{item}\"",
+
+    "about_1": "**Herc** is a bot created to help the user keep control of their servers.",
+    "about_2": "Created by **Raul César**, the bot was developed in **JavaScript** and uses the **Discord.js** framework.",
+    "about_3": "Version",
+
+    "avatar_1": "User {tag} does not have an profile picture!",
+
+    "changelog_1": "ID not found!",
+    "changelog_2": "Patch notes",
+    "changelog_3": "Version",
+    "changelog_4": "Page {nota.id} | If you want to look at other patch notes, use: /changelog <1-{aid}>"
+}

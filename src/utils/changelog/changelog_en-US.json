@@ -1,0 +1,10 @@
+{
+    "ids": [
+        {
+          "id": "1",
+          "version": "1.0.0",
+          "desc": "- Bot officially launched! Use `/help` to see available commands.",
+          "data": "08/08/2022"
+        }
+    ]
+}

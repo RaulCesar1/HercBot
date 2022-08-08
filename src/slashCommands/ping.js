@@ -4,10 +4,10 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('ping')
-		.setDescription('Mostra o ping do bot'),
-	async execute(interaction, client) {
+		.setDescription('Ping'),
+	async execute(interaction, client, lf) {
         let embed_ping = new EmbedBuilder()
-        .setDescription(`**Ping do bot: \`${client.ws.ping}ms\`**`)
+        .setDescription(lf['ping_1'].replace('{bot_ping}', client.ws.ping))
         .setColor('Aqua')
 
         interaction.reply({ embeds: [embed_ping] })
