@@ -70,8 +70,8 @@ client.on('ready', async () => {
 
 	function rStatus() {
 		let status = [
-			`Bot criado por Luar#8567`,
-			`Utilize /ajuda para ver meus comandos!`,
+			`Bot created by Luar#8567`,
+			`Use /help to see my commands!`,
 		]
 
 		let raStatus = Math.floor(Math.random() * status.length)
@@ -109,19 +109,6 @@ client.on('interactionCreate', async (interaction) => {
 		await interaction.reply({
 			content: 'Ocorreu um erro ao executar este comando!',
 			ephemeral: true,
-		})
-	}
-})
-
-// Evento "messageCreate"
-
-client.on('messageCreate', async (message) => {
-	if (message.author.bot) return
-	if (message.channel.type === ChannelType.DM) return
-
-	if (message.content.startsWith(`<@${client.user.id}>`)) {
-		message.reply({
-			content: `Quer saber meus comandos? Utilize \`/ajuda\``,
 		})
 	}
 })
