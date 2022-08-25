@@ -1,0 +1,16 @@
+{
+    "ids": [
+        {
+          "id": "1",
+          "version": "1.0.0",
+          "desc": "- Bot officially launched! Use `/help` to see available commands.",
+          "data": "08/08/2022"
+        },
+        {
+          "id": "2",
+          "version": "1.1.0",
+          "desc": "- Added `/clear` command.",
+          "data": "25/08/2022"
+        }
+    ]
+}

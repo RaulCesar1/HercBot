@@ -6,6 +6,7 @@
     "csgo_desc": "Comandos relacionados ao CS:GO",
     "about_desc": "Mostra informações sobre o bot",
     "changelog_desc": "Mostra as notas de atualização do bot",
+    "clear_desc": "Limpa uma determinada quantidade de mensagens em um canal",
 
     "ping_1": "**Ping do bot: `{bot_ping}ms`**",
 
@@ -26,8 +27,15 @@
 
     "avatar_1": "O usuário {tag} não possui uma foto de perfil!",
 
-    "changelog_1": "ID não encontrado!",
     "changelog_2": "Notas de Atualização",
     "changelog_3": "Versão",
-    "changelog_4": "Página {nota.id} | Caso queira olhar outras notas de atualizações, use: /changelog <1-{aid}>"
+    "changelog_4": "Página {nota.id} | Caso queira olhar outras notas de atualizações, use: /changelog <1-{aid}>",
+
+    "ticket_1": "Sem permissão.",
+    "ticket_2": "Utilize este comando em um canal de ticket.",
+    "ticket_3": "O Ticket será excluido em 10 segundos.",
+    "ticket_4": "Assunto do Ticket",
+    "ticket_5": "Descrição",
+    
+    "clear_1": "**{interaction.user.username} limpou {messagesQ} mensagens nesse canal!**"
 }

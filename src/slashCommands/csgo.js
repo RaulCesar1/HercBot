@@ -19,6 +19,7 @@ module.exports = {
 		// Market Price Command
 
 		if (interaction.options._subcommand === 'market') {
+			await interaction.deferReply({ ephemeral: true })
 			let item = interaction.options.get('item').value
 
 			let url = `https://steamcommunity.com/market/search/render/?query=${item}&norender=1&l=english&appid=730`
@@ -32,13 +33,8 @@ module.exports = {
 			for (let i = 0; i < req.results.length; i++) {
 				let market_steam_url =
 					`https://steamcommunity.com/market/listings/730/${req.results[i].hash_name}?l=english`
-						.replace(' | ', '%20%7C%20')
-						.replace(' ', '%20')
-						.replace(' ', '%20')
-						.replace(' ', '%20')
-						.replace(' ', '%20')
-						.replace(' ', '%20')
-						.replace(' ', '%20')
+						.replace('|', '%7C')
+						.replaceAll(' ', '%20')
 
 				items.push(
 					`
@@ -50,21 +46,15 @@ module.exports = {
 			}
 
 			let embed = new EmbedBuilder()
-				.setDescription(items.join('\n'))
+				.setDescription(items.join(' '))
 				.setColor('Aqua')
 				.setAuthor({ name: lf["csgo_4"].replace('{item}', item) })
 
 			try {
-				interaction.reply({ embeds: [embed] })
+				interaction.editReply({ embeds: [embed] })
 			} catch(e) {
 				console.log(e)
 			}
-		}
-
-		// CSGO Status Command
-
-		if (interaction.options._subcommand === 'status') {
-			interaction.reply({ content: 'W.I.P', ephemeral: true })
 		}
 	},
 }

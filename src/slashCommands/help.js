@@ -1,5 +1,6 @@
 require('dotenv').config()
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js')
+const { commandos } = require('../commandHandler.js')
 const fs = require('fs')
 
 module.exports = {
@@ -7,7 +8,7 @@ module.exports = {
 		.setName('help')
 		.setDescription('Help')
 		.addStringOption((option) =>
-			option.setName('command').setDescription('command').setRequired(false)
+			option.setName('command').setDescription('Command').setRequired(false)
 		),
 	async execute(interaction, client, lf) {
 		const commandList = []
@@ -25,7 +26,7 @@ module.exports = {
 		if (!interaction.options.get('command')) return interaction.reply({ embeds: [embed_ajuda_geral], ephemeral: true })
 
 		const getInputCommand = interaction.options.get('command').value
-		const getClientCommand = client.commands.get(getInputCommand)
+		const getClientCommand = commandos.get(getInputCommand)
 
 		if (!getClientCommand || getClientCommand === undefined)
 		return interaction.reply({content: lf['help_3'].replace('{command}', getInputCommand), ephemeral: true })

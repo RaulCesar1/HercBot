@@ -6,41 +6,27 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('changelog')
 		.setDescription('Changelog')
-		.addStringOption((option) =>
+		.addIntegerOption((option) =>
 			option
 				.setName('id')
 				.setDescription(`Id`)
+				.setMinValue(1)
+				.setMaxValue(parseInt(aid, 10))
 		),
 	async execute(interaction, client, lf) {
         try {
-            var notas = require(`../utils/changelog/changelog_${interaction.locale}.json`)
+            var notas = require(`../lang/changelog/changelog_${interaction.locale}.json`)
         } catch (e) {
-            if (!notas) notas = require(`../utils/changelog/changelog_en-US.json`)
+            if (!notas) notas = require(`../lang/changelog/changelog_en-US.json`)
         }
 
-		const numero = interaction.options.getString('id')
-
-		var id
-
-		if (!numero) {
-			id = aid
-		} else {
-			var id = parseInt(numero, 10)
-
-			if (
-				id <= 0 ||
-				id > parseInt(aid, 10) ||
-				!id ||
-				id === 'undefined' ||
-				id === 'null'
-			)
-				return interaction.reply(lf["changelog_1"])
-		}
-
+		const id = interaction.options.get('id')?.value || aid
+		
 		const nota = notas.ids.find((it) => it.id == id)
 
 		try {
-			let embed = new EmbedBuilder()
+			interaction.reply({embeds: [
+				new EmbedBuilder()
 				.setColor('Yellow')
 				.setAuthor({
 					name: lf["changelog_2"],
@@ -57,8 +43,7 @@ module.exports = {
                         .replace('{nota.id}', nota.id)
                         .replace('{aid}', aid),
 				})
-
-			interaction.reply({ embeds: [embed] })
+			]})
 		} catch (e) {
 			console.log(e)
 		}

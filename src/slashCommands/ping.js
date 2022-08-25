@@ -6,10 +6,10 @@ module.exports = {
 		.setName('ping')
 		.setDescription('Ping'),
 	async execute(interaction, client, lf) {
-        let embed_ping = new EmbedBuilder()
-        .setDescription(lf['ping_1'].replace('{bot_ping}', client.ws.ping))
-        .setColor('Aqua')
-
-        interaction.reply({ embeds: [embed_ping] })
+        interaction.reply({embeds: [
+			new EmbedBuilder()
+				.setDescription(lf['ping_1'].replace('{bot_ping}', client.ws.ping))
+				.setColor('Aqua')
+		]})
 	},
 };

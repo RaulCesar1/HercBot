@@ -6,6 +6,7 @@
     "csgo_desc": "CS:GO related commands",
     "about_desc": "Show information about the bot",
     "changelog_desc": "Shows the bot's patch notes",
+    "clear_desc": "Clears a specified amount of messages in a channel",
 
     "ping_1": "**Bot Ping: `{bot_ping}ms`**",
 
@@ -26,8 +27,15 @@
 
     "avatar_1": "User {tag} does not have an profile picture!",
 
-    "changelog_1": "ID not found!",
     "changelog_2": "Patch notes",
     "changelog_3": "Version",
-    "changelog_4": "Page {nota.id} | If you want to look at other patch notes, use: /changelog <1-{aid}>"
+    "changelog_4": "Page {nota.id} | If you want to look at other patch notes, use: /changelog <1-{aid}>",
+
+    "ticket_1": "No permission.",
+    "ticket_2": "Use this command in a ticket channel.",
+    "ticket_3": "The Ticket will be deleted in 10 seconds.",
+    "ticket_4": "Ticket Subject",
+    "ticket_5": "Description",
+    
+    "clear_1": "**{interaction.user.username} cleared {messagesQ} messages in this chat!**"
 }
