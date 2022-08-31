@@ -94,7 +94,7 @@ module.exports = {
             try {
                 await interaction.reply({ content: lf["ticket_3"] })
                 setTimeout(async () => {
-                    await canalTicket.delete()
+                    try{await canalTicket.delete()}catch(e){}
                 }, 10 * 1000)
             } catch(e) {
                 console.log(e)
