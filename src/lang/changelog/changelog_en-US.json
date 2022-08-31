@@ -11,6 +11,12 @@
           "version": "1.1.0",
           "desc": "- Added `/clear` command.\n- Removed `/help` command.\n- Added translations for command name and descriptions\n- Added a maintenance system",
           "data": "25/08/2022"
+        },
+        {
+          "id": "3",
+          "version": "1.3.0",
+          "desc": "- Added `/ticket` command.",
+          "data": "30/08/2022"
         }
     ]
 }
