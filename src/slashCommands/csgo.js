@@ -5,19 +5,31 @@ const axios = require('axios')
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('csgo')
-		.setDescription('Csgo')
+		.setDescription('CS:GO related commands.')
+		.setDescriptionLocalizations({
+			"pt-BR": "Comandos relacionados ao CS:GO."
+		})
 		.addSubcommand((sub) =>
 			sub
 				.setName('market')
-				.setDescription('Market')
+				.setDescription('Do a search on the CS:GO Steam Community Market.')
+				.setNameLocalizations({
+					"pt-BR": "mercado"
+				})
+				.setDescriptionLocalizations({
+					"pt-BR": "Realiza uma pesquisa no Mercado da Comunidade Steam do CS:GO."
+				})
 				.addStringOption((option) =>
-					option.setName('item').setDescription('Item').setRequired(true)
+					option
+					.setName('item')
+					.setDescription('The item you are looking for.')
+					.setDescriptionLocalizations({
+						"pt-BR": "O item que está procurando."
+					})
+					.setRequired(true)
 				)
-		)
-		.addSubcommand((sub) => sub.setName('status').setDescription('Status')),
+		),
 	async execute(interaction, client, lf) {
-		// Market Price Command
-
 		if (interaction.options._subcommand === 'market') {
 			await interaction.deferReply({ ephemeral: true })
 			let item = interaction.options.get('item').value

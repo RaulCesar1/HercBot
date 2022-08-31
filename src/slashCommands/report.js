@@ -4,11 +4,23 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('report')
-		.setDescription('Report')
+		.setDescription('Command to report a problem or a suggestion.')
+		.setNameLocalizations({
+            "pt-BR": "reportar"
+        })
+		.setDescriptionLocalizations({
+			"pt-BR": "Comando para reportar um problema ou uma sugestão."
+		})
 		.addStringOption(option => 
 			option
 			.setName('report')
-			.setDescription('Report')
+			.setDescription('Problem or suggestion you are reporting.')
+			.setNameLocalizations({
+				"pt-BR": "reporte"
+			})
+			.setDescriptionLocalizations({
+				"pt-BR": "O Problema ou sugestão que está reportando."
+			})
 			.setRequired(true)
 		),
 	async execute(interaction, client, lf) {

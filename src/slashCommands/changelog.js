@@ -5,11 +5,20 @@ const aid = process.env.AID
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('changelog')
-		.setDescription('Changelog')
+		.setDescription("Shows the bot's patch notes.")
+		.setNameLocalizations({
+            "pt-BR": "notas"
+        })
+		.setDescriptionLocalizations({
+			"pt-BR": "Mostra as notas de atualização do bot.",
+		})
 		.addIntegerOption((option) =>
 			option
 				.setName('id')
-				.setDescription(`Id`)
+				.setDescription(`The ID of a previous patch note.`)
+				.setDescriptionLocalizations({
+					"pt-BR": "O ID de uma nota de atualização anterior."
+				})
 				.setMinValue(1)
 				.setMaxValue(parseInt(aid, 10))
 		),

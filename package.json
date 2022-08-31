@@ -16,6 +16,7 @@
     "dev": "node src/index.js"
   },
   "dependencies": {
+    "@green-code/music-track-data": "^2.0.3",
     "discord.js": "^14.3.0",
     "steam-market-fetcher": "^1.7.3"
   }

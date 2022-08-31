@@ -9,7 +9,7 @@
         {
           "id": "2",
           "version": "1.1.0",
-          "desc": "- Adicionado o comando `/clear`.",
+          "desc": "- Adicionado o comando `/clear`.\n- Comando `/help` removido.\n- Adicionado traduções para o nome dos comandos e descrições\n- Adicionado um sistema de manutenção",
           "data": "25/08/2022"
         }
     ]

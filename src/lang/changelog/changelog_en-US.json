@@ -9,7 +9,7 @@
         {
           "id": "2",
           "version": "1.1.0",
-          "desc": "- Added `/clear` command.",
+          "desc": "- Added `/clear` command.\n- Removed `/help` command.\n- Added translations for command name and descriptions\n- Added a maintenance system",
           "data": "25/08/2022"
         }
     ]

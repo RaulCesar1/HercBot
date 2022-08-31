@@ -1,12 +1,5 @@
 {
-    "help_desc": "Mostra a descrição de um comando em específico",
-    "report_desc": "Comando para reportar um problema ou uma sugestão",
-    "uptime_desc": "Mostra o tempo de atividade do bot",
-    "ping_desc": "Mostra o ping do bot",
-    "csgo_desc": "Comandos relacionados ao CS:GO",
-    "about_desc": "Mostra informações sobre o bot",
-    "changelog_desc": "Mostra as notas de atualização do bot",
-    "clear_desc": "Limpa uma determinada quantidade de mensagens em um canal",
+    "manutencao": "A manutenção do bot está ativa, utilize esse comando novamente mais tarde!",
 
     "ping_1": "**Ping do bot: `{bot_ping}ms`**",
 
@@ -36,6 +29,18 @@
     "ticket_3": "O Ticket será excluido em 10 segundos.",
     "ticket_4": "Assunto do Ticket",
     "ticket_5": "Descrição",
-    
-    "clear_1": "**{interaction.user.username} limpou {messagesQ} mensagens nesse canal!**"
+    "ticket_6": "**O seu servidor ainda não possui uma categoria definida para a criação de tickets.**",
+    "ticket_7": "Para definir a categoria de tickets, utilize o comando **/ticket categoria** e insira o ID da categoria.",
+    "ticket_8": "O ID inserido é inválido!",
+    "ticket_9": "O ID inserido precisa ser de uma categoria de canais.",
+    "ticket_10": "A categoria de tickets foi definida com sucesso para **<#{id}>**!",
+    "ticket_11": "Esta categoria já está definida como a categoria de tickets.",
+    "ticket_12": "Ticket criado por: **>iut**",
+    "ticket_13": "ID do usuário: **>iuid**",
+    "ticket_14": "Para fechar o ticket, utilize: /ticket fechar",
+    "ticket_15": "Ticket criado com sucesso! <#>tid>",
+    "ticket_16": "Este servidor não possui uma categoria definida para a criação de tickets!",
+
+    "clear_1": "**{interaction.user.username} limpou {messagesQ} mensagens nesse canal!**",
+    "clear_2": "Não foi possível limpar nenhuma mensagem nesse canal!"
 }

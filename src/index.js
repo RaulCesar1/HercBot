@@ -7,4 +7,4 @@ client.mongoConnect()
 commandHandler()
 client.once('ready', (...args) => require('./events/ready.js').execute(...args))
 client.on('interactionCreate', (...args) => require('./events/interactionCreate.js').execute(...args, client))
-module.exports = (client)
+exports.client = client

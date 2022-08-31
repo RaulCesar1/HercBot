@@ -4,7 +4,13 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('uptime')
-		.setDescription('Uptime'),
+		.setDescription('Shows bot uptime.')
+		.setNameLocalizations({
+			"pt-BR": "atividade"
+		})
+		.setDescriptionLocalizations({
+			"pt-BR": "Mostra o tempo de atividade do bot."
+		}),
 	async execute(interaction, client) {
         function converter_horas(tempo) {
 			var horas = Math.floor(tempo / 3600);

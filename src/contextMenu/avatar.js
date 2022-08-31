@@ -7,6 +7,10 @@ const {
 module.exports = {
 	data: new ContextMenuCommandBuilder()
 		.setName('Profile Picture')
+		.setNameLocalizations({
+			"pt-BR": "Foto de Perfil",
+			"en-US": "Profile Picture"
+		})
 		.setType(ApplicationCommandType.User),
 	async execute(interaction, client, lf) {
 		var avatarTarget = interaction.targetUser.avatarURL()

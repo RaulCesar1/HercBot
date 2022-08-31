@@ -5,7 +5,13 @@ const package = require('../../package.json');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('about')
-		.setDescription('About'),
+		.setDescription('Show information about the bot.')
+        .setNameLocalizations({
+            "pt-BR": "sobre"
+        })
+        .setDescriptionLocalizations({
+            "pt-BR": "Mostra informações sobre o bot."
+        }),
 	async execute(interaction, client, lf) {
         try {
             const buttons = new ActionRowBuilder()
