@@ -3,16 +3,11 @@ const { Schema, model } = require('mongoose');
 
 const Herc = new Schema(
   {
-    id: {
-      type: String,
-      default: process.env.CLIENT_ID,
-      required: true
-    },
-    manutencao: {
-        type: Boolean,
-        default: false,
-        required: true
-    }
+    id: { type: String, default: process.env.CLIENT_ID, required: true },
+    manutencao: { type: Boolean, default: false, required: true },
+    xpRanking: { type: [], default: [], required: true },
+    listaCheques: { type: [], default: [], required: true },
+    trabalhosAtivos: { type: [], default: [], required: true }
   }
 );
 

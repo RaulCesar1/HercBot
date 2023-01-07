@@ -6,7 +6,20 @@ const Guild = new Schema(
       type: String,
       required: true
     },
-    tokenCategory: String
+    tokenCategory: String,
+    callsCategoria: String,
+    calls: [
+      {
+        authorID: {
+          type: String,
+          required: true
+        },
+        channelID: {
+          type: String,
+          required: true
+        }
+      }
+    ]
   }
 );
 

@@ -1,0 +1,28 @@
+{
+    "ids": [
+        {
+          "id": "1",
+          "version": "1.0.0",
+          "desc": "- Bot lançado oficialmente! Utilize `/help` para ver os comandos disponíveis.",
+          "data": "08/08/2022"
+        },
+        {
+          "id": "2",
+          "version": "1.1.0",
+          "desc": "- Adicionado o comando `/clear`.\n- Comando `/help` removido.\n- Adicionado traduções para o nome dos comandos e descrições\n- Adicionado um sistema de manutenção",
+          "data": "25/08/2022"
+        },
+        {
+          "id": "3",
+          "version": "1.3.0",
+          "desc": "- Adicionado o comando `/ticket`.",
+          "data": "30/08/2022"
+        },
+        {
+          "id": "4",
+          "version": "1.4.0",
+          "desc": "- Implementado um sistema de economia! Utilize `/economia`;\n- Crie suas calls privadas com </call criar:1057616383459983430>;\n- Sistema de XP implementado! Utilize `/xp`;\n- Foi removido o sistema de tradução (será implementado de novo no futuro);\n- Foi adicionado um comando para consultar informações dos Correios: </correios consultar-cep:1055340452192194571>;\n- Foi adicionado um comando para consultar conjugações de um verbo: </conjugacao:1055684650976165898>. Lembrando que está em fase de TESTES!;\n - Foi adicionado um comando para se comunicar com a inteligência artificial da OPENAI: </inteligencia-artificial texto:1055331625312993380> e </inteligencia-artificial imagem:1055331625312993380>;\n- Comando `changelog` renomeado para `notas`;\n- Comando `about` renomeado para `sobre`;\n- Comando `avatar` renomeado para `foto-de-perfil`;\n- Comando `report` renomeado para `reportar`;\n- Comando `clear` renomeado para `limpar`;\n- Comando `uptime` renomeado para `atividade`;\n- Todas as *embeds* do bot agora são da cor \"Blurple\".",
+          "data": "07/01/2023"
+        }
+    ]
+}

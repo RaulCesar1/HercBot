@@ -6,21 +6,13 @@ const {
 
 module.exports = {
 	data: new ContextMenuCommandBuilder()
-		.setName('Profile Picture')
-		.setNameLocalizations({
-			"pt-BR": "Foto de Perfil",
-			"en-US": "Profile Picture"
-		})
+		.setName('Foto de Perfil')
 		.setType(ApplicationCommandType.User),
-	async execute(interaction, client, lf) {
+	async execute(interaction, client) {
 		var avatarTarget = interaction.targetUser.avatarURL()
 
 		let embedAvatarTarget = new EmbedBuilder()
-			.setAuthor({
-				name: !avatarTarget
-					? lf["avatar_1"].replace('{tag}', interaction.targetUser.tag)
-					: interaction.targetUser.tag,
-			})
+			.setAuthor({ name: !avatarTarget? `O usuário ${interaction.targetUser.tag} não possui uma foto de perfil!`: interaction.targetUser.tag })
 			.setImage(avatarTarget)
 			.setColor('Yellow')
 

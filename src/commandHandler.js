@@ -6,14 +6,14 @@ const { REST } = require('@discordjs/rest')
 const { Routes } = require('discord-api-types/v10')
 const { Collection } = require('discord.js')
 const commandos = new Collection()
-const directories = [
-    `${__dirname}/slashCommands`, 
-    `${__dirname}/contextMenu`
+const directories_global = [
+    `${__dirname}\\slashCommands`, 
+    `${__dirname}\\contextMenu`
 ]
 const commands = []
 async function commandHandler() {
     async.each(
-        directories,
+        directories_global,
         (directory, callback) => {
             console.log(`Carregando comandos no diretório ${directory}`)
             fs.readdir(directory, (err, files) => {
@@ -25,7 +25,7 @@ async function commandHandler() {
                     const command = require(`${directory}/${file}`)
                     commands.push(command.data.toJSON())
                     commandos.set(command.data.name, command)
-                    console.log(`\x1b[32m[${tipos(command.data.type)}] \x1b[33m${command.data.name}`)
+                    console.log(`\x1b[32m[${tipos(command.data.type)}] \x1b[33m${command.data.name}\x1b[0m`)
                 })
     
                 callback()
@@ -34,8 +34,9 @@ async function commandHandler() {
         (err) => {
             if (err) console.error(err)
         }
-    )
+    )  
 }
+
 async function carregarComandos() {
     const rest = new REST({ version: '10' }).setToken(process.env.TOKEN)
 

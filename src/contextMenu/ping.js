@@ -8,10 +8,10 @@ module.exports = {
 	data: new ContextMenuCommandBuilder()
 		.setName('Ping')
 		.setType(ApplicationCommandType.Message),
-	async execute(interaction, client, lf) {
+	async execute(interaction, client) {
         interaction.reply({ embeds: [
 			new EmbedBuilder()
-				.setDescription(lf['ping_1'].replace('{bot_ping}', client.ws.ping))
+				.setDescription(`**Ping do bot: \`${client.ws.ping}ms\`**`)
 				.setColor('Aqua')
 		], ephemeral: true })
 	},

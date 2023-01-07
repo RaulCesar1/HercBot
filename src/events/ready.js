@@ -1,23 +1,19 @@
-require('dotenv').config()
-const { carregarComandos } = require('../commandHandler.js')
-const { loadGuilds } = require('../utils/loadGuilds.js')
+const { carregarComandos } = require('../commandHandler.js');
+const { emQuestaoReset } = require('../utils/emQuestaoReset.js');
+const { loadGuilds } = require('../utils/loadGuilds.js');
+const { updateRanking } = require('../utils/updateRanking.js');
+const { updateTrabalhos } = require('../utils/updateTrabalhos.js');
+const { rStatus } = require('../utils/rStatus.js');
+const { oneTimeHerc } = require('../utils/oneTimeHerc.js');
 
 module.exports = {
-	name: 'ready',
-	once: true,
 	async execute(client) {
         carregarComandos()
-        setInterval(loadGuilds, 1000 * 6)
-    
-        function rStatus() {
-            let status = [
-                `Bot created by Luar#8567`,
-                `Type a "/" and see my commands!`,
-            ]
-    
-            let raStatus = Math.floor(Math.random() * status.length)
-            client.user.setActivity(status[raStatus])
-        }
+        emQuestaoReset()
+        oneTimeHerc()
         setInterval(rStatus, 10000)
+        setInterval(updateRanking, 5000)
+        setInterval(updateTrabalhos, 5000)
+        setInterval(loadGuilds, 6000)
 	},
 };
