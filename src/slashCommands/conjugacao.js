@@ -14,8 +14,9 @@ module.exports = {
 	async execute(interaction, client) {
         await interaction.deferReply({ ephemeral: true })
         const verbo = interaction.options.get('verbo').value
-        const conjugacoes = await conjugar(verbo)
+
         try {
+            const conjugacoes = await conjugar(verbo)
             interaction.editReply({ embeds: [
                 new EmbedBuilder()
                 .setAuthor({ name: `Conjugações do verbo "${verbo}"`, iconURL: interaction.user.avatarURL() })

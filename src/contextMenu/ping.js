@@ -12,7 +12,7 @@ module.exports = {
         interaction.reply({ embeds: [
 			new EmbedBuilder()
 				.setDescription(`**Ping do bot: \`${client.ws.ping}ms\`**`)
-				.setColor('Aqua')
+				.setColor('Blurple')
 		], ephemeral: true })
 	},
 }

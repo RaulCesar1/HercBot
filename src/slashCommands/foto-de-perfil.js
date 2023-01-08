@@ -19,7 +19,7 @@ module.exports = {
             .setColor('Blurple')
             !user.avatarURL()?embedPP.setDescription('Este usuário não possui uma foto de perfil!'):''
 
-            interaction.reply({ embeds:[embedPP] })
+            interaction.reply({ ephemeral: true, embeds:[embedPP] })
         } catch(e) {
             console.log(e)
         }

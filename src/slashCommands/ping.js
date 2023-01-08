@@ -6,10 +6,10 @@ module.exports = {
 		.setName('ping')
 		.setDescription('Mostra o ping do bot.'),
 	async execute(interaction, client) {
-        interaction.reply({embeds: [
+        interaction.reply({ ephemeral: true, embeds: [
 			new EmbedBuilder()
 				.setDescription(`**Ping do bot: \`${client.ws.ping}ms\`**`)
-				.setColor('Aqua')
+				.setColor('Blurple')
 		]})
 	},
 };
