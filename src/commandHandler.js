@@ -7,8 +7,8 @@ const { Routes } = require('discord-api-types/v10')
 const { Collection } = require('discord.js')
 const commandos = new Collection()
 const directories_global = [
-    `${__dirname}\\slashCommands`, 
-    `${__dirname}\\contextMenu`
+    `${__dirname}/slashCommands`, 
+    `${__dirname}/contextMenu`
 ]
 const commands = []
 async function commandHandler() {
