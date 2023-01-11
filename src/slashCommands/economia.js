@@ -121,7 +121,7 @@ module.exports = {
 				const trabalhoEmProgresso = herc.trabalhosAtivos.find(trabalho => trabalho.trabalhadorID == interaction.user.id)
 
 				if(!trabalhoEmProgresso) 
-				return interaction.reply({ ephemeral: true, content: `Você não está trabalhando. Utilize </economia trabalho trabalhar:1059566494381514842> para trabalhar.` })
+				return interaction.reply({ ephemeral: true, content: `Você não está trabalhando. Utilize </economia trabalho trabalhar:1062381516119879766> para trabalhar.` })
 
 				const trabalhoEmProgressoIndex = herc.trabalhosAtivos.findIndex(trabalho => trabalho.trabalhadorID == interaction.user.id)
 
@@ -164,7 +164,7 @@ module.exports = {
 				if(user.emQuestao == true) return interaction.reply({ ephemeral: true, content: `Responda a questão (S ou N) que está sendo pedida antes de utilizar o comando.` })
 				const trabalhoEmProgresso = herc.trabalhosAtivos.find(trabalho => trabalho.trabalhadorID == interaction.user.id)
 				if(trabalhoEmProgresso) 
-				return interaction.reply({ ephemeral: true, content: 'Você já está trabalhando, acompanhe o progresso em </economia trabalho progresso:1059566494381514842>' })
+				return interaction.reply({ ephemeral: true, content: 'Você já está trabalhando, acompanhe o progresso em </economia trabalho progresso:1062381516119879766>' })
 
 				const tempo = interaction.options.getInteger('tempo') || 0.5
 				const tempoUI = tempo==0.5?'30 minutos':`${tempo} horas`
@@ -198,7 +198,7 @@ module.exports = {
 						await herc.trabalhosAtivos.push({ trabalhadorID: interaction.user.id, comecou: Date.now(), tempo, ganhos })
 						await herc.save()
 
-						await interaction.followUp({ ephemeral: true, content: `Você agora está trabalhando. Utilize </economia trabalho progresso:1059566494381514842> para acompanhar seu progresso!` })
+						await interaction.followUp({ ephemeral: true, content: `Você agora está trabalhando. Utilize </economia trabalho progresso:1062381516119879766> para acompanhar seu progresso!` })
 						user.emQuestao = false
 						user.economia.trabalhando = true
 						await user.save()
@@ -210,7 +210,7 @@ module.exports = {
 				const trabalhoEmProgresso = herc.trabalhosAtivos.find(trabalho => trabalho.trabalhadorID == interaction.user.id)
 
 				if(!trabalhoEmProgresso) 
-				return interaction.reply({ ephemeral: true, content: `Você não está trabalhando. Utilize </economia trabalho trabalhar:1059566494381514842> para trabalhar.` })
+				return interaction.reply({ ephemeral: true, content: `Você não está trabalhando. Utilize </economia trabalho trabalhar:1062381516119879766> para trabalhar.` })
 
 				const barraProgresso = new cliProgress.SingleBar({ format: '{bar}' }, cliProgress.Presets.shades_classic)
 
@@ -226,7 +226,7 @@ module.exports = {
 					new EmbedBuilder()
 					.setColor('Blurple')
 					.setAuthor({ name: "Progresso no trabalho", iconURL: interaction.user.avatarURL() })
-					.setDescription(`Utilize </economia trabalho cancelar:1059566494381514842> para cancelar o trabalho que está fazendo.`)
+					.setDescription(`Utilize </economia trabalho cancelar:1062381516119879766> para cancelar o trabalho que está fazendo.`)
 					.addFields([
 						{
 							name: 'Informações do trabalho:',

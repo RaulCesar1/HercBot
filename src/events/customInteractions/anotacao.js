@@ -20,7 +20,7 @@ exports.create = async function(interaction, user) {
             }
         )
         await user.save()
-        await interaction.reply({ ephemeral: true, content: `Anotação criada com sucesso! Utilize </anotações listar:1061793550087503922> para ver suas anotações.\nID: **${anotacaoId}**` })
+        await interaction.reply({ ephemeral: true, content: `Anotação criada com sucesso! Utilize </anotações listar:1062838390120259685> para ver suas anotações.\nID: **${anotacaoId}**` })
     } catch(e) {
         console.log(e)
         interaction.reply({ ephemeral: true, content: 'Não foi possível criar essa anotação.' })
