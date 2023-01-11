@@ -93,8 +93,28 @@ module.exports = {
 				sub.setName('cancelar')
 				.setDescription('Cancele o trabalho que está fazendo.')	
 			)
+		)
+		.addSubcommandGroup(sub =>
+			sub.setName('bolsa-de-valores')
+			.setDescription('Economia -> bolsa de valores')
+			.addSubcommand(sub =>
+				sub.setName('ver')
+				.setDescription('Veja a situação atual da bolsa de valores.')	
+			)	
 		),
 	async execute(interaction, client, guild, herc, user){
+		if(interaction.options._group === "bolsa-de-valores") {
+			if(interaction.options._subcommand === "ver") {
+				return interaction.reply({ ephemeral: true, embeds: [
+					new EmbedBuilder()
+					.setColor('Blurple')
+					.setAuthor({ name: "Bolsa de valores", iconURL: client.user.avatarURL() })
+					.setDescription(`A bolsa de valores está atualmente em **\`${herc.bolsaValores}%\`**.`)
+					.setTimestamp()
+				] })
+			}
+		}
+
 		if(interaction.options._group === "trabalho") {
 			if(interaction.options._subcommand === "cancelar") {
 				if(user.emQuestao == true) return interaction.reply({ ephemeral: true, content: `Responda a questão (S ou N) que está sendo pedida antes de utilizar o comando.` })
@@ -120,13 +140,14 @@ module.exports = {
 					const filter = m => m.author.id == interaction.user.id && (m.content.toLowerCase().startsWith('s') || m.content.toLowerCase().startsWith('n'))
 					interaction.channel.awaitMessages({ filter, max: 1 })
 					.then(async coletado => {
+						coletado.first().delete()
+
 						if(coletado.first().content.toLowerCase().startsWith('n')) {
 							interaction.followUp({ ephemeral: true, content: 'Processo cancelado.' })
 							user.emQuestao = false
 							await user.save()
 							return
 						}
-						coletado.first().delete()
 
 						await herc.trabalhosAtivos.splice(trabalhoEmProgressoIndex, 1)
 						await herc.save()
@@ -165,13 +186,14 @@ module.exports = {
 					const filter = m => m.author.id == interaction.user.id && (m.content.toLowerCase().startsWith('s') || m.content.toLowerCase().startsWith('n'))
 					interaction.channel.awaitMessages({ filter, max: 1 })
 					.then(async coletado => {
+						coletado.first().delete()
+
 						if(coletado.first().content.toLowerCase().startsWith('n')) {
 							interaction.followUp({ ephemeral: true, content: 'Processo cancelado.' })
 							user.emQuestao = false
 							await user.save()
 							return
 						}
-						coletado.first().delete()
 
 						await herc.trabalhosAtivos.push({ trabalhadorID: interaction.user.id, comecou: Date.now(), tempo, ganhos })
 						await herc.save()

@@ -21,7 +21,8 @@ const User = new Schema(
       xp: { type: Number, required: true, default: 1 },
       level: { type: Number, required: true, default: 1 },
       rankPos: { type: Number, required: true, default: 0 }
-    }
+    },
+    anotacoes: { type: [], default: [], required: true }
   }
 );
 

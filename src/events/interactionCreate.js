@@ -26,9 +26,17 @@ module.exports = {
         await updateUser(user, 2, interaction, herc)
 
         // Custom interactions
+        
+        const cid = interaction.customId
 
-        if(interaction.customId === "toggleManutencao") require('./customInteractions/toggleManutencao.js').execute(interaction, herc)
-        if(interaction.customId === "ticket-create") require('./customInteractions/ticket-create.js').execute(interaction, guild)
+        if(cid === "toggleManutencao") require('./customInteractions/toggleManutencao.js').execute(interaction, herc)
+        if(cid === "ticket-create") require('./customInteractions/ticket-create.js').execute(interaction, guild)
+        if(cid === "anotacao-create") require('./customInteractions/anotacao.js').create(interaction, user)
+        if(cid === "anotacao-modificar") require('./customInteractions/anotacao.js').modify(interaction, user)
+        if(cid === "categoria-calls.btn") require('./customInteractions/configPanel.js').categoriaCallsBtn(interaction, user, guild)
+        if(cid === "categoria-calls.modal") require('./customInteractions/configPanel.js').categoriaCallsModal(interaction, user, guild)
+        if(cid === "categoria-tiquetes.btn") require('./customInteractions/configPanel.js').categoriaTiquetesBtn(interaction, user, guild)
+        if(cid === "categoria-tiquetes.modal") require('./customInteractions/configPanel.js').categoriaTiquetesModal(interaction, user, guild)
 
         // Executar comando
 

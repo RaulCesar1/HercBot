@@ -42,10 +42,10 @@ exports.execute = async function(interaction, guild) {
         exPerms()
 
         interaction.guild.channels.create({
-            name: `ticket-${newTicket.id}`,
+            name: `tiquete-${newTicket.id}`,
             parent: categoriaTickets,
             type: ChannelType.GuildText,
-            reason: `Ticket criado por: **${interaction.user.tag}**`,
+            reason: `Tíquete criado por: **${interaction.user.tag}**`,
             permissionOverwrites: permOver
         }).then(async ticketPrivado => {
             let embedAssuntoPrincipal = new EmbedBuilder()
@@ -59,15 +59,15 @@ exports.execute = async function(interaction, guild) {
             let embedInfo = new EmbedBuilder()
                 .setDescription(`
                     **\`#${newTicket.id}\`**
-                    Ticket criado por: **${interaction.user.tag}**
+                    Tíquete criado por: **${interaction.user.tag}**
                     ID do usuário: **${interaction.user.id}**
                 `)
-                .setFooter({ text: "Para fechar o ticket, utilize: /ticket fechar" })
+                .setFooter({ text: "Para fechar o tíquete, utilize: /tíquete fechar" })
                 .setColor('Blurple')
 
             await ticketPrivado.send({ embeds: [embedAssuntoPrincipal, embedDescricao] })
             await ticketPrivado.send({ embeds: [embedInfo] })
-            await interaction.reply({ content: `Ticket criado com sucesso! <#${ticketPrivado.id}>`, ephemeral: true })
+            await interaction.reply({ content: `Tíquete criado com sucesso! <#${ticketPrivado.id}>`, ephemeral: true })
         })
     } catch(e) {
         console.log(e)

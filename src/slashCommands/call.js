@@ -21,14 +21,6 @@ module.exports = {
 			.setDescription('Deleta a sua call.')	
 		)
 		.addSubcommand(sub =>
-			sub.setName('categoria')
-			.setDescription('Define a categoria onde será criada as calls.')
-			.addStringOption(option =>
-				option.setName('categoria-id')
-				.setDescription('ID da categoria onde será criada as calls.')	
-			)
-		)
-		.addSubcommand(sub =>
 			sub.setName('modificar')
 			.setDescription('Modifica características da sua call privada.')	
 			.addIntegerOption(option =>
@@ -98,39 +90,6 @@ module.exports = {
 			} catch(e) {
 				console.log(e)
 			}
-		}
-
-		if(interaction.options._subcommand === "categoria") {
-            if(!interaction.member.permissions.has(PermissionsBitField.Flags.ManageGuild)) 
-			return interaction.editReply('Sem permissão.')
-            let categoriaID = interaction.options.get('categoria-id')?.value
-
-            if(!categoriaID) {
-                return interaction.editReply({embeds: [
-                    new EmbedBuilder()
-                    .setDescription(
-                        callsCategoria?`**<#${callsCategoria}>**`:
-                        `
-                        **O seu servidor ainda não possui uma categoria definida para a criação de calls privadas.**\n
-                        Para definir a categoria de calls privadas, utilize o comando </call categoria:1057616383459983430> e insira o ID da categoria.
-                        `)
-                    .setColor('Blurple')
-                ] })
-            }
-
-            try {
-                let toVerify = interaction.guild.channels.cache.get(categoriaID) || false
-
-                if(toVerify&&categoriaID==guild?.callsCategoria) return interaction.editReply(`Esta categoria já está definida como a categoria de calls privadas.`)
-                if(toVerify == false) return interaction.editReply(`O ID inserido é inválido!`)
-                if(toVerify.type !== 4) return interaction.editReply(`O ID inserido precisa ser de uma categoria de canais.`)
-
-                guild.callsCategoria = categoriaID
-                await guild.save()
-                await interaction.editReply(`A categoria de calls privadas foi definida com sucesso para **<#${categoriaID}>**!`)
-            } catch(e) {
-                console.log(e)
-            }
 		}
 
 		if(interaction.options._subcommand === "modificar") {

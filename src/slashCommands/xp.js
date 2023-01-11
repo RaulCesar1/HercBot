@@ -64,14 +64,21 @@ module.exports = {
 			const xpRanking = herc.xpRanking
 			var aMostrar = []
 			for(let i = 0; i < 10; i++) {
-				let usa = await User.findOne({ _id: xpRanking[i][0] })
-				aMostrar.push(`**#${i+1}** ${usa.userTag} - **${((((usa.xp.level-1)*25)*usa.xp.level)+usa.xp.xp)} | ${usa.xp.level}**`)
+				try {
+					var usa = await User.findOne({ _id: xpRanking[i][0] })
+					var xpAcumulado = ((((usa.xp.level-1)*25)*usa.xp.level)+usa.xp.xp)
+					var usaLevel = usa.xp.level
+				} catch {
+					usa = false
+				}
+				
+				aMostrar.push(`#${i+1} ${usa==false?'Não definido':`${usa.userTag}: < ${xpAcumulado} | ${usaLevel} >`}`)
 			}
 
 			const embedRanking = new EmbedBuilder()
 			.setColor('Blurple')
 			.setAuthor({ name: 'Ranking de usuários por XP', iconURL: client.user.avatarURL() })
-			.setDescription(aMostrar.join('\n'))
+			.setDescription(`\`\`\`${aMostrar.join('\n')}\`\`\``)
 			.setFooter({ text: `Sua posição no rank: #${user.xp.rankPos}`, iconURL: interaction.user.avatarURL() })
 
 			await interaction.editReply({ embeds: [embedRanking] })
