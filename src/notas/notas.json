@@ -27,7 +27,7 @@
         {
           "id": "5",
           "version": "1.5.0",
-          "desc": "- Alterada a embed que mostra o ranking de XP;\n- Comando `ticket` renomeado para `tíquete`;\n- Mensagem quando cancela um processo no comando de economia agora é automaticamente excluída;\n- Foi adicionado um comando de anotações: `/anotações criar`;\n- Foi adicionado um painel de configuração para o bot: `/configurar`;\n- Comandos `/call categoria` e `/tíquete categoria` foram movidos para o painel de configuração;\n- Foi implementado uma pequena parte do sistema de bolsa de valores;\n- Adicionado um comando para ver a porcentagem da bolsa de valores: `/economia bolsa-de-valores ver`.",
+          "desc": "- Alterada a embed que mostra o ranking de XP (</xp rank:1062381516551901300>);\n- Comando `ticket` renomeado para `tíquete`;\n- Mensagem quando cancela um processo no comando de economia agora é automaticamente excluída;\n- Foi adicionado um comando de anotações: </anotações criar:1062838390120259685>;\n- Foi adicionado um painel de configuração para o bot: </configurar:1062838390120259686>;\n- Comandos `/call categoria` e `/tíquete categoria` foram movidos para o painel de configuração;\n- Foi implementado uma pequena parte do sistema de bolsa de valores;\n- Adicionado um comando para ver a porcentagem da bolsa de valores: </economia bolsa-de-valores ver:1062381516119879766>.",
           "data": "11/01/2023"
         },
         {
