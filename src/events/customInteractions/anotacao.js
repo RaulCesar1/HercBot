@@ -1,4 +1,4 @@
-exports.create = async function(interaction, user) {
+exports.create = async function(interaction, user, guild, herc) {
     function gerarId(o) {
         var anotacaoId = o + 1
         if(user.anotacoes.find(x => x.id == anotacaoId)) return gerarId(o + 1) 
@@ -27,7 +27,7 @@ exports.create = async function(interaction, user) {
     }
 }
 
-exports.modify = async function(interaction, user) {
+exports.modify = async function(interaction, user, guild, herc) {
     try {
         const Anotacao = interaction.components[0].components[0].value
         const anotacaoId = interaction.components[0].components[0].customId

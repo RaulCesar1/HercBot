@@ -1,6 +1,6 @@
 const { ModalBuilder, TextInputBuilder, TextInputStyle, ActionRowBuilder, PermissionsBitField } = require("discord.js")
 
-exports.categoriaCallsBtn = async function(interaction, user, guild) {
+exports.categoriaCallsBtn = async function(interaction, user, guild, herc) {
     if(!interaction.member.permissions.has(PermissionsBitField.Flags.ManageGuild)) return interaction.reply({ content: `Sem permissão.`, ephemeral: true })
     
     const Formulario = new ModalBuilder()
@@ -21,7 +21,7 @@ exports.categoriaCallsBtn = async function(interaction, user, guild) {
     return await interaction.showModal(Formulario)
 }
 
-exports.categoriaCallsModal = async function(interaction, user, guild) {
+exports.categoriaCallsModal = async function(interaction, user, guild, herc) {
     try {
         const categoriaID = interaction.components[0].components[0].value
         const toVerify = interaction.guild.channels.cache.get(categoriaID) || false
@@ -38,7 +38,7 @@ exports.categoriaCallsModal = async function(interaction, user, guild) {
     }
 }
 
-exports.categoriaTiquetesBtn = async function(interaction, user, guild) {
+exports.categoriaTiquetesBtn = async function(interaction, user, guild, herc) {
     if(!interaction.member.permissions.has(PermissionsBitField.Flags.ManageGuild)) return interaction.reply({ content: `Sem permissão.`, ephemeral: true })
     
     const Formulario = new ModalBuilder()
@@ -59,7 +59,7 @@ exports.categoriaTiquetesBtn = async function(interaction, user, guild) {
     return await interaction.showModal(Formulario)
 }
 
-exports.categoriaTiquetesModal = async function(interaction, user, guild) {
+exports.categoriaTiquetesModal = async function(interaction, user, guild, herc) {
     try {
         const categoriaID = interaction.components[0].components[0].value
         const toVerify = interaction.guild.channels.cache.get(categoriaID) || false

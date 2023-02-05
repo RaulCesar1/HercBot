@@ -1,7 +1,7 @@
 const Ticket = require('../../utils/Ticket.js')
 const { ChannelType, PermissionsBitField, EmbedBuilder } = require('discord.js')
 
-exports.execute = async function(interaction, guild) {
+exports.execute = async function(interaction, user, guild, herc) {
     try {
         let AssuntoPrincipal = interaction.components[0].components[0].value
         let Descricao = interaction.components[1].components[0].value
