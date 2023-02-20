@@ -35,6 +35,12 @@
           "version": "1.5.1",
           "desc": "- Transforme suas mensagens em emojis utilizando `/emojiar`.",
           "data": "04/02/2023"
+        },
+        {
+          "id": "7",
+          "version": "1.5.2",
+          "desc": "- Converta números de base decimal para outras bases utilizando `/converter-base`.",
+          "data": "20/02/2023"
         }
     ]
 }

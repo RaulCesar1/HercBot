@@ -4,7 +4,7 @@ const { SlashCommandBuilder } = require('discord.js')
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('emojiar')
-		.setDescription('Transforme sua mensagem em emojis de letras.')
+		.setDescription('Transforme sua mensagem em emojis.')
         .addStringOption(option =>
             option.setName('mensagem')
             .setDescription('Mensagem que será transformada em emojis.')
@@ -44,6 +44,21 @@ module.exports = {
                     break
                 case ' ':
                     toPush = char
+                    break
+                case '!':
+                    toPush = ':exclamation:'
+                    break
+                case '?':
+                    toPush = ':question:'
+                    break
+                case '=':
+                    toPush = ':heavy_equals_sign:'
+                    break
+                case '+':
+                    toPush = ':heavy_plus_sign:'
+                    break
+                case '$':
+                    toPush = ':heavy_dollar_sign:'
                     break
                 default:
                     toPush = char

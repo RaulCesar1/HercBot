@@ -14,7 +14,7 @@ module.exports = {
 				.setMaxValue(parseInt(aid, 10))
 		),
 	async execute(interaction, client) {
-		const notas = require(`../notas/notas.json`)
+		const notas = require(`../utils/notas.json`)
 
 		const id = interaction.options.get('id')?.value || aid
 		

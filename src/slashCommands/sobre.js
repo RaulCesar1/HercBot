@@ -22,10 +22,10 @@ module.exports = {
 
             const embedAbout = new EmbedBuilder()
             .setDescription(`
-            **Herc** é um bot criado para auxiliar o usuário a manter o controle de seus servidores.
-            Criado por **Raul César**, o bot foi desenvolvido em linguagem **JavaScript** e utiliza o framework **Discord.js**.
+            **Herc** é um bot com variadas funções, como um sistema de economia, criação de tíquetes e calls privadas, entre outras.\n
+            Feito por **Raul César**, o bot foi desenvolvido utilizando **Node.js** com **Discord.js**.
             `)
-            .setFooter({ text: `Versão ${package.version}` })
+            .setFooter({ text: `Versão ${package.version} | Sinta-se livre para utiliza-lo em seu servidor.` })
             .setThumbnail(client.user.avatarURL())
             .setColor('Blurple')
 
