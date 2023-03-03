@@ -1,26 +1,25 @@
 {
   "name": "Herc",
-  "version": "1.5.2",
-  "main": "index.js",
+  "version": "1.6.0",
+  "main": "src/index.ts",
   "repository": "https://github.com/RaulCesar1/HercBot",
   "author": "RaulCesar1 <raulcesardeoliveira2@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@discordjs/rest": "^1.1.0",
-    "axios": "^0.27.2",
-    "discord-api-types": "^0.37.4",
-    "dotenv": "^16.0.1",
-    "mongoose": "^6.5.2"
-  },
-  "scripts": {
-    "dev": "node src/index.js"
+    "@typescript-eslint/eslint-plugin": "^5.54.0",
+    "@typescript-eslint/parser": "^5.54.0",
+    "crypto": "^1.0.1",
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.35.0"
   },
   "dependencies": {
-    "@green-code/music-track-data": "^2.0.3",
-    "cli-progress": "^3.11.2",
-    "correios-brasil": "^3.0.3",
-    "discord.js": "^14.3.0",
-    "openai": "^3.1.0",
-    "steam-market-fetcher": "^1.7.3"
+    "mongoose": "^6.10.0",
+    "openai": "^3.2.1"
+  },
+  "scripts": {
+    "dev": "ts-node dist/index.js",
+    "build": "tsc -p tsconfig.json",
+    "go": "npm run build | npm run dev"
   }
 }
