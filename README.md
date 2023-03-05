@@ -4,12 +4,14 @@
 
 ### Compilando e rodando o bot:
 
-<strong>npm run build</strong> ou <strong>yarn build</strong> -> Compila o código TypeScript<br>
-<strong>npm run dev</strong> ou <strong>yarn dev</strong> -> Roda o código compilado
+```bash
+$ npm run build # Compila o código
+$ npm run dev   # Roda o código compilado
 
-#### Apenas com um comando:
+# Para fazer isso com um único comando:
 
-<strong>npm run go</strong> ou <strong>yarn go</strong> -> Compila e roda o código
+$ npm run go    # Compila e roda o código
+```
 
 ###
 
