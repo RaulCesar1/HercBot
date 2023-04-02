@@ -67,3 +67,7 @@ Apenas crie sua pull request explicando o que foi alterado.
 ## Licença
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+<div align="center">
+  <img src="https://media.discordapp.net/attachments/1081354471902285904/1091887449191501904/Herc-1.png?width=702&height=702">
+</div>
